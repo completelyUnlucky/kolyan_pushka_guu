@@ -38,16 +38,20 @@
         </nav>
     </header>
     <main class="box-content">
-        <h3 class="box-tab-base sticky-header">Лента заявок</h3>
-        <div class="grid-container">
-            {% for request in requests %}
-                <div class="grid-item request">
-                    <h4>{{ request.description }}</h4>
-                    <p>Размер оплаты: {{ request.payment_amount }}</p>
-                    <p>Опубликовал: {{ request.user.username }}</p>
-                    <a href="{{ url_for('view_request', request_id=request.id) }}">Подробнее</a>
-                </div>
-            {% endfor %}
+        <div class="header-container">
+            <h3 class="box-tab-base centered-header">Лента заявок</h3>
+        </div>
+        <div class="grid-scroll-container">
+            <div class="grid-container">
+                {% for request in requests %}
+                    <div class="grid-item request">
+                        <h4>{{ request.description }}</h4>
+                        <p>Размер оплаты: {{ request.payment_amount }}</p>
+                        <p>Опубликовал: {{ request.user.username }}</p>
+                        <a href="{{ url_for('view_request', request_id=request.id) }}">Подробнее</a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </main>
 </section>
