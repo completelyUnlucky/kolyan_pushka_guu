@@ -87,12 +87,6 @@ def place_request():
     return render_template('place_request.html', form=form)
 
 
-@app.route('/requests')
-def requests():
-    requests_list = Request.query.all()
-    return render_template('requests.html', requests=requests_list)
-
-
 @app.route('/request/<int:request_id>')
 def view_request(request_id):
     request = Request.query.get_or_404(request_id)

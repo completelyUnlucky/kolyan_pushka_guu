@@ -147,9 +147,8 @@ body {
 
 .grid-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .grid-item.request {
@@ -157,11 +156,12 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    margin: 1rem;
+    width: calc(25% - 2rem);
 }
 
 .box-tab-base {
-    margin-top: 1200px;
+    margin-top: 90px;
     padding: 0.5rem 1rem;
     background-color: #fff;
     border: none;
